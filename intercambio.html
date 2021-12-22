@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/intercambio.css" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Quicksand:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Materialize -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+
+
+    <title>Christmas Gift</title>
+  </head>
+  <body>
+    <div class="bg">
+      <img src="./img/trees.png" alt="" />
+    </div>
+    <main>
+      <div class="instructions">
+        <img src="./img/nav-light.png" class="focos1" alt="" />
+        <img src="./img/nav-light.png" class="focos2" alt="" />
+        <div class="container instructionsContent">
+          <div class="itemInst active">
+            <h2>1. Ingresa los participantes</h2>
+            <p>Añade los nombres de los participantes y el correo del organizador</p>
+            <span class="bar-selector"></span>
+          </div>
+          <div class="itemInst">
+            <h2>2. Detalles del Intercambio</h2>
+            <p>Ingresa los detalles que tendrá el intercambio e información adicional que desees</p>
+            <span class="bar-selector"></span>
+          </div>
+          <div class="itemInst">
+            <h2>3. Intercambio completado</h2>
+            <p>
+              Descarga la lista y avisa a los participantes la persona que les
+              ha tocado!
+            </p>
+            <span class="bar-selector"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="formulario container">
+        <!-- =======================================PARTICIPANTES======================================= -->
+        <div class="main-participantes">
+          <div class="organizador">
+            <img src="./img/giving2.png" class="campanas" alt="" />
+            <h2 class="titleTxt">Organizador</h2>
+            <p class="advice">
+              (El organizador también cuenta como participante)
+            </p>
+            <div class="item">
+              <input
+                type="text"
+                id="name"
+                placeholder="Nombre completo"
+                required
+                class="itemData"
+              />
+              <input type="mail" id="mailOrganizador" placeholder="email" required />
+            </div>
+          </div>
+          <hr class="divider" />
+          <div class="participantes">
+            <h2 class="titleTxt">Participantes</h2>
+            <div class="item">
+              <input
+                type="text"
+                id="name"
+                placeholder="Nombre completo"
+                required
+                class="itemData"
+              />
+            </div>
+            <div class="item">
+              <input
+                type="text"
+                id="name"
+                placeholder="Nombre completo"
+                required
+                class="itemData"
+              />
+            </div>
+            <div class="extraItem"></div>
+          </div>
+          <div class="botones">
+            <button type="button" class="addItem">
+              <i class="material-icons">person_add</i>
+              <p>Añadir participante</p>
+            </button>
+            <button type="button" class="button nextBtn">Siguente</button>
+          </div>
+        </div>
+        <!-- =======================================DETALLES======================================= -->
+        <div class="main-detalles">
+          <div class="arbolito">
+            <img src="./img/new1.png" alt="" />
+          </div>
+
+          <h2 class="titleTxt">Detalles del Intercambio</h2>
+
+          <div class="detalles-content">
+            <div class="details1">
+              <div class="detail-box">
+                <label for="monto"
+                  >Digite el monto minimo del intercambio</label
+                >
+                <span>
+                  <b>$</b
+                  ><input
+                    class="detailData"
+                    type="number"
+                    name="monto"
+                    id="monto"
+                  />
+                  <img src="./img/giving1.png" class="gift-2" alt="" />
+                </span>
+              </div>
+              <div class="detail-box">
+                <label for="fecha"
+                  >Digite el monto minimo del intercambio</label
+                >
+                <input type="date" name="fecha" id="fecha" class="detailData" />
+              </div>
+            </div>
+
+            <hr class="divider" />
+
+            <div class="details2">
+              <label for="descripcion"
+                >Escribe a los participantes algo que deban saber.</label
+              >
+              <textarea
+                name="descripcion"
+                id="descripcion"
+                cols="30"
+                rows="10"
+                class="detailData"
+              ></textarea>
+            </div>
+          </div>
+          <div class="botones">
+            <button type="button" class="button backBtn">Atrás</button>
+            <button type="button" class="button nextBtn-two">Enviar</button>
+          </div>
+        </div>
+        <!-- =======================================VENTANA FINAL======================================= -->
+        <div class="ventanaFinal ">
+          <div class="titleFinal">
+            <h1 class="titleTxt">
+              INTERCAMBIO <br />
+              <span>COMPLETADO</span>
+            </h1>
+            <p class="parrafoFinal">
+              Esta es la lista final del intercambio, aquí puedes ver que
+              persona le toca a cada participante, podrás descargar un archivo
+              PDF con los datos completos del intercambio y la lista que se
+              muestra en esta pantalla. Se te enviará un correo también con el
+              archivo y los datos del intercambio.
+            </p>
+            <div class="botonesFinales">
+              <button id="getPDF" class="btnDownload"
+                >Descargar Intercambio
+                <i class="material-icons">file_download</i></button
+              >
+              <a href="./intercambio.html" class="nuevoIntercambio"
+                >Crear nuevo intercambio</a
+              >
+            </div>
+          </div>
+          <div class="imgFinal">
+            <img src="./img/new4.png" alt="" />
+          </div>
+          <div class="mixList" id="listaFinal">
+            <div class="mixBox">
+              <div class="headList">
+                <h2>A</h2>
+                <h2>Le toca</h2>
+              </div>
+              <div class="lista">
+                <div class="col1"></div>
+
+                <div class="col2"></div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <a href="#">Terminos y condiciones</a>
+        |
+        <a href="#">Aviso de privacidad</a>
+      </div>
+    </main>
+
+    <script src="./js/intercambio.js"></script>
+    
+  </body>
+</html>
