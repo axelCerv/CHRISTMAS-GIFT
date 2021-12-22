@@ -222,6 +222,9 @@ body {
 }
 
 @media (max-width: 650px) {
+    .container{
+        width: 90%;
+    }
   .mainContent {
     margin-top: 40px;
     justify-content: space-evenly;

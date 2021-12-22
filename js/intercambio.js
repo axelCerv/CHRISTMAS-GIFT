@@ -7,7 +7,7 @@
     const item = `<div class="new-item">
                         <input type="text" id="name" placeholder="Nombre completo" class="itemData">
                         
-                        <button type="button" class="deleteBtn"><i class="material-icons">delete</i></button> 
+                        <button type="button" class="deleteBtn"><i class='bx bxs-trash-alt'></i></button> 
                       </div>`;
 
     extraItems.insertAdjacentHTML("beforeend", item);

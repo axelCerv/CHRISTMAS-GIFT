@@ -207,10 +207,20 @@ main {
   border: 1px solid #545454;
 }
 .new-item button {
+  width: 40px;
   background: none;
   cursor: pointer;
   border: none;
   color: var(--rojo);
+}
+.new-item button i{
+  font-size: 25px;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: center;
 }
 
 .botones {
@@ -237,6 +247,7 @@ main {
 }
 .addItem i {
   color: var(--rojo);
+  font-size: 25px;
 }
 .button {
   cursor: pointer;
@@ -450,6 +461,9 @@ main {
   transition: .3s;
   border: none;
 }
+.btnDownload i{
+  font-size: 20px;
+}
 .btnDownload:hover{
   background: var(--rojo-oscuro);
 }
@@ -499,7 +513,9 @@ main {
 }
 
 @media (max-width: 1370px) {
-
+  .mixBox{
+    margin: 0 100px;
+  }
   .ventanaFinal{
     text-align: center;
     margin: 0;
@@ -587,9 +603,16 @@ main {
   .detail-box span input {
     width: 120px;
   }
+  .mixBox{
+    margin: 0;
+  }
 }
 
 @media (max-width: 730px) {
+  
+  .main-participantes{
+    margin-bottom: -150px;
+  }
   .titleTxt {
     font-size: 2.5rem;
   }
@@ -643,5 +666,15 @@ main {
   .main-detalles .titleTxt {
     margin-top: 10px;
     font-size: 2rem;
+  }
+  .titleFinal h1{
+    font-size: 35px;
+    line-height: 30px;
+  }
+  .titleFinal h1 span{
+    font-size: 37px;
+  }
+  .mixList{
+    padding: 30px 0;
   }
 }
