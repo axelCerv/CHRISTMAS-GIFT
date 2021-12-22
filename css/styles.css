@@ -222,12 +222,19 @@ body {
 }
 
 @media (max-width: 650px) {
+  .main{
+    min-width: 400px;
+  }
+  .footer{
+    font-size: 12px;
+  }
     .container{
-        width: 90%;
+        width: 95%;
     }
   .mainContent {
     margin-top: 40px;
     justify-content: space-evenly;
+    min-width: 100%;
   }
   .btnCreate {
     margin: 10px 0;

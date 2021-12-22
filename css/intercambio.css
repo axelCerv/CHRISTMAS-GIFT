@@ -24,6 +24,9 @@ input {
   font-family: "Quicksand", sans-serif;
   font-size: 16px;
 }
+i{
+  font-size: 20px;
+}
 .normalTxt {
   font-family: "Quicksand", sans-serif;
   font-weight: 400;
