@@ -78,37 +78,7 @@
           ventanaParticipantes.style.display = "none";
           ventanaDetalles.style.display = "block";
           // ============================ OBTENCION DE DATA==============================
-          const mainList = [];
-          const list2 = [];
-        
-          const listaHtml1 = document.querySelector(".col1");
-          const listaHtml2 = document.querySelector(".col2");
-    
-          formParticipants.forEach((item) => {
-            const nombre = item.value;
-            mainList.push(nombre);
-            list2.push(nombre);
-          });
-    
-          mainList.forEach((item) => {
-            // lista 1
-            var itemList1 = `<p>${item}</p>`;
-    
-            listaHtml1.insertAdjacentHTML("beforeend", itemList1);
-
-            // lista 2
-            do {
-              random = Math.floor(Math.random() * list2.length);
-            } while (item == list2[random]);
-    
-            if (item == list2[random]) {
-              random = Math.floor(Math.random() * list2.length);
-            } else {
-              var itemList2 = `<p>${list2[random]}</p>`;
-              listaHtml2.insertAdjacentHTML("beforeend", itemList2);
-            }
-            list2.splice(random, 1);
-          });
+          
       }else if(!validationMail && !validationName){
         alert('Por favor revise que haya rellenado todos los campos correctamente')
       }
@@ -159,7 +129,39 @@
     const fecha = document.getElementById("fecha").value;
     const monto = document.getElementById("monto").value;
     const descripcion = document.getElementById("descripcion").value;
+    
+    const formParticipants = document.querySelectorAll(".itemData");
+          const mainList = [];
+          const list2 = [];
+        
+          const listaHtml1 = document.querySelector(".col1");
+          const listaHtml2 = document.querySelector(".col2");
+    
+          formParticipants.forEach((item) => {
+            const nombre = item.value;
+            mainList.push(nombre);
+            list2.push(nombre);
+          });
+    
+          mainList.forEach((item) => {
+            // lista 1
+            var itemList1 = `<p>${item}</p>`;
+    
+            listaHtml1.insertAdjacentHTML("beforeend", itemList1);
 
+            // lista 2
+            do {
+              random = Math.floor(Math.random() * list2.length);
+            } while (item == list2[random]);
+    
+            if (item == list2[random]) {
+              random = Math.floor(Math.random() * list2.length);
+            } else {
+              var itemList2 = `<p>${list2[random]}</p>`;
+              listaHtml2.insertAdjacentHTML("beforeend", itemList2);
+            }
+            list2.splice(random, 1);
+          });
   
   });
 
@@ -171,27 +173,29 @@
 
   downloadPDF.addEventListener('click',()=>{
     
-    var specialElementHandlers = {
-      '#getPDF': function(element, renderer){
-        return true;
-      },
-      '.controls': function(element, renderer){
-        return true;
-      }
-    };
+    // var specialElementHandlers = {
+    //   '#getPDF': function(element, renderer){
+    //     return true;
+    //   },
+    //   '.controls': function(element, renderer){
+    //     return true;
+    //   }
+    // };
 
-    var doc = new jsPDF('p','pt','a4');   
-    var col1 = document.querySelector('.col1');
-    var col2 = document.querySelector('.col2');
-    doc.fromHTML((col1), {
-      width: 1000, 
-      'elementHandlers': specialElementHandlers
-    });
-    doc.fromHTML((col2), {
-      width: 1200, 
-      'elementHandlers': specialElementHandlers
-    });
-    doc.save('Intercambio.pdf')
-    console.log(printSection)
+    // var doc = new jsPDF('p','pt','a4');   
+    // var col1 = document.querySelector('.col1');
+    // var col2 = document.querySelector('.col2');
+    // doc.fromHTML((col1), {
+    //   width: 1000, 
+    //   'elementHandlers': specialElementHandlers
+    // });
+    // doc.fromHTML((col2), {
+    //   width: 1200, 
+    //   left:400,
+    //   'elementHandlers': specialElementHandlers
+    // });
+    // doc.save('Intercambio.pdf')
+    alert("Botón en mantenimiento");
+
   })
 
